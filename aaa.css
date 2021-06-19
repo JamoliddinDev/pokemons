@@ -64,6 +64,7 @@ input::placeholder {
 }
 
 button {
+    font-family: 'Montserrat', sans-serif;
     border: none;
     background: none;
     color: inherit;
