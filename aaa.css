@@ -8,6 +8,11 @@ a {
     margin-right: 10px;
 }
 
+select {
+    outline: none;
+    border: none;
+}
+
 ul {
     margin: 0;
     padding: 0;
