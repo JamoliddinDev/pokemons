@@ -108,11 +108,15 @@ types.forEach(function(type) {
 formAdd.addEventListener("submit", function(evt) {
     evt.preventDefault();
     var optionValue = document.querySelector("select").value;
+    var searchInput = document.querySelector("#searchInput").value;
+    var inputValue = new RegExp(searchInput, "gi")
     var filtredTypes = pokemons.filter(function (type) {
         if (optionValue === "0") {
             return true;
         }
         return type.type.includes(optionValue);
+    }).filter(function (namee) {
+        return namee.name.match(inputValue);
     });
     console.log(filtredTypes);
     looper(filtredTypes);
@@ -122,28 +126,29 @@ formAdd.addEventListener("submit", function(evt) {
 
 //Ism bilan qidiradigan qismi
 
-
+/*
 var arrLengthP = document.querySelector("#formP");
 var nameSearchForm = document.querySelector("#nameSearchForm");
 var searchBtn = document.querySelector("#searchBtn");
 
-var namePo = [];
-for (var element of pokemons) {
-    namePo.push(element.name.toLowerCase().replace("♂", ""))
-}
-
 
 nameSearchForm.addEventListener("submit", function(evt) {
     evt.preventDefault();
-    var searchInput = document.querySelector("#searchInput").value.toLowerCase();
+    var searchInput = document.querySelector("#searchInput").value;
+    // var filtredNames = pokemons.filter(function (namee) {
+    //     if (namee.name.toLowerCase().includes(searchInput)) {
+    //         return namee
+    //     }
+    // });
+
     var filtredNames = pokemons.filter(function (namee) {
-        if (namee.name.toLocaleLowerCase().includes(searchInput)) {
-            return namee
-        }
+        return namee.name.match(inputValue);
     });
     arrLengthP.textContent = `Qidiruvdan keyingi pokemonlar soni: ${filtredNames.length}`
    looper(filtredNames);
 })
+*/
+
 
 /* O'xshamagan funksiya
 
@@ -162,12 +167,6 @@ nameSearchForm.addEventListener("submit", function(evt) {
     console.log(choosen);
 })
 */
-
-
-
-
-
-
 
 
 /*
