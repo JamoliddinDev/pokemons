@@ -17,29 +17,28 @@ pi.textContent = `Average weight: ${Math.round(sum)} kg`
 var addObject = function (product) {
     var li = document.createElement("li");
     var newsImg = document.createElement('img');
-    
+
     // Pokemon img
     newsImg.src = product.img;
     li.append(newsImg)
     ulWrapper.append(li)
-    
+
     //Pokemon Title
     var newsTitle = document.createElement('h2');
     newsTitle.textContent = product.name;
     li.append(newsTitle)
     ulWrapper.append(li);
-    
-    // pokemon type
 
+    // pokemon type
     product.type.forEach(function (element) {
         var newsGenreText = document.createElement('a');
         newsGenreText.href = "#";
         newsGenreText.textContent = element;
-        
+
         li.append(newsGenreText)
         ulWrapper.append(li)
     });
-    /*
+    /* FOR Of orqali qilingan varianti
     for (var genre of product.type) {
         var newsGenreText = document.createElement('a');
         newsGenreText.href = "#";
@@ -48,22 +47,21 @@ var addObject = function (product) {
         li.append(newsGenreText)
         ulWrapper.append(li)
     } */
-    
+
     // pokemon weights
     var newsWeight = document.createElement('p');
     var removed = product.weight.replace(' kg', '')
     newsWeight.textContent = `${Math.round(removed)} kg`;
     li.append(newsWeight)
     ulWrapper.append(li);
-    
-    
+
+
     // Pokemon birth
     var newsDate = document.createElement('p');
     newsDate.textContent = ` ${new Date(product.birth_date).getDate()}.${new Date(product.birth_date).getMonth() + 1}.${new Date(product.birth_date).getFullYear()}`;
     li.append(newsDate)
     ulWrapper.append(li);
-    
-    
+
 }
 
 var formAdd = document.querySelector('#formAdd');
@@ -77,27 +75,29 @@ var looper = function (pokemonsArray) {
         addObject(pookemon)
     }
 }
+
 looper(pokemons);
 
 // Option tanlanadigan qismi
 // 1. janrlani yi'gib olish
 var getTypes = function () {
     var types = [];
-    pokemons.forEach(function(pokemon) {
+    pokemons.forEach(function (pokemon) {
         pokemon.type.forEach(function (type) {
-            if(!types.includes(type)) {
+            if (!types.includes(type)) {
                 types.push(type)
             }
         })
     })
     return types
 };
+
 var types = getTypes();
 
 var formAdd = document.querySelector("#formAdd");
 var select = document.querySelector("select");
 
-types.forEach(function(type) {
+types.forEach(function (type) {
     var optionName = document.createElement("option");
     optionName.value = type;
     optionName.textContent = type;
@@ -105,7 +105,7 @@ types.forEach(function(type) {
 
 });
 
-formAdd.addEventListener("submit", function(evt) {
+formAdd.addEventListener("submit", function (evt) {
     evt.preventDefault();
     var optionValue = document.querySelector("select").value;
     var searchInput = document.querySelector("#searchInput").value;
@@ -169,7 +169,7 @@ nameSearchForm.addEventListener("submit", function(evt) {
 */
 
 
-/*
+/* Arrayga custom push qilish va ekranga chiqarish.
 formAdd.addEventListener('submit', function (evt) {
     evt.preventDefault();
         var arr = ({
@@ -290,7 +290,3 @@ for (object of obj) {
 }
 
 */
-
-
-
-
