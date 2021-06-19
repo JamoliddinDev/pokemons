@@ -111,14 +111,11 @@ formAdd.addEventListener("submit", function (evt) {
     var searchInput = document.querySelector("#searchInput").value;
     var inputValue = new RegExp(searchInput, "gi")
     var filtredTypes = pokemons.filter(function (type) {
-        if (optionValue === "0") {
-            return true;
-        }
-        return type.type.includes(optionValue);
-    }).filter(function (namee) {
-        return namee.name.match(inputValue);
-    });
-    console.log(filtredTypes);
+        var NameMatch = type.name.match(inputValue);
+        console.log(type.name.match(inputValue));
+        var typeMatch = optionValue === "0" ? true : type.type.includes(optionValue);
+        return NameMatch && typeMatch;
+    })
     looper(filtredTypes);
 })
 // qism tugadi.
