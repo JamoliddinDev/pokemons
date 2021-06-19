@@ -80,7 +80,9 @@ input::placeholder {
 button {
     font-family: 'Montserrat', sans-serif;
     border: none;
-    background: none;
+    padding: 0.3rem 1rem;
+    background-color: #fff;
+    border-radius: 10rem;
     color: inherit;
     font-size: 20px;
     cursor: pointer;
