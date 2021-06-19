@@ -1,0 +1,40 @@
+
+body {
+    margin-top: 150px;
+    background-color: rgb(109, 177, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#rain, #training {
+    margin-top: 15px;
+}
+
+#btn {
+    margin-top: 10px;
+}
+
+#quarterInput {
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+a {
+    margin-right: 10px;
+}
+
+#wrap {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+li {
+    width: 100px;
+}

@@ -1,0 +1,84 @@
+body {
+    margin-top: 150px;
+    background-color: #EDEDF4;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+    margin-right: 10px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2, p, a {
+    color: white;
+}
+
+#formP, #piy {
+    color: black;
+}
+
+li {
+    background-color: #F0544F;
+    width: 280px;
+    margin-right: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    text-align: center;
+    width: 12rem;
+    border-radius: 10rem;
+    margin-right: 1rem;
+    color: inherit;
+    border: 1px solid #fff;
+    transition: all 0.3s;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+#formAdd {
+    margin-bottom: 12px;
+}
+
+#submit {
+    font-size: 16px;
+} 
