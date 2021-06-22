@@ -1,5 +1,6 @@
 var ulWrapper = document.querySelector('#wrap');
 var pi = document.querySelector("#piy");
+var SelectedSort = document.querySelector("#sort");
 
 var sum = 0;
 
@@ -105,6 +106,43 @@ types.forEach(function (type) {
 
 });
 
+// Sort qilish 
+
+var titleSort = function (a, b) {
+    if (a.name > b.name) {
+        return 1;
+    }
+    if (a.name < b.name) {
+        return -1
+    }
+    return 0;
+};
+
+var titleReverseSort = function (a, b) {
+    if (a.name > b.name) {
+        return -1;
+    }
+    if (a.name < b.name) {
+        return 1
+    }
+    return 0;
+};
+
+var birthDateSort = function (a, b) {
+    return a.birth_date - b.birth_date
+};
+
+var birthDateReverseSort = function (a, b) {
+    return b.birth_date - a.birth_date;
+};
+
+var sortFunctions = {
+    "0": titleSort,
+    "1": titleReverseSort,
+    "2": birthDateReverseSort,
+    "3": birthDateSort
+};
+
 formAdd.addEventListener("submit", function (evt) {
     evt.preventDefault();
     var optionValue = document.querySelector("select").value;
@@ -115,7 +153,7 @@ formAdd.addEventListener("submit", function (evt) {
         console.log(type.name.match(inputValue));
         var typeMatch = optionValue === "0" ? true : type.type.includes(optionValue);
         return NameMatch && typeMatch;
-    })
+    }).sort(sortFunctions[SelectedSort.value]);
     looper(filtredTypes);
 })
 // qism tugadi.

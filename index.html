@@ -15,8 +15,15 @@
             <option value="0">All</option>
         </select>
         <input type="text" id="searchInput" placeholder="Nomini kiriting">
+        <select name="sort" id="sort">
+            <option value="0">A-Z</option>
+            <option value="1">Z-A</option>
+            <option value="2">Young to old</option>
+            <option value="3">Old to young</option>
+          </select>
         <button #="submit">Submit</button>
     </form>
+
 
     <form action="GET" id="nameSearchForm">
         <!--<button id="searchBtn">Search</button> -->
